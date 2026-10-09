@@ -1,21 +1,24 @@
-# Month-1 foundation
+ï»¿# AI-Powered Recruitment Assistant
 
-This project contains the exact Month-1 preparation structure for a synthetic recruitment-assistant prototype. It uses only synthetic identifiers (`Candidate_001`–`Candidate_050`, `JD_001`–`JD_020`) and supplied facts. No real people, company history, hiring outcomes, or fabricated metrics are included.
+## Month 1 foundation
+This repository contains a synthetic-only foundation for resume and job-description preparation. It uses labels `Candidate_001` through `Candidate_050` and `JD_001` through `JD_020`. Contact fields are clearly synthetic test values. No real candidate, employer, hiring, historical, or performance data is included.
 
-## Structure
-- `data/sample_data/`: 50 resume CSV rows and 20 job-description CSV rows.
-- `data/processed/`: cleaned CSV outputs.
-- `src/`: `text_extraction.py`, `text_cleaning.py`, `resume_processing.py`, `dataset_preparation.py`, and `similarity_demo.py`.
-- `notebooks/`: four notebooks in the required order.
-- `docs/`: project overview, data dictionary, and setup notes.
+## Contents
+- `data/sample_data/`: canonical 50-row resume and 20-row job-description CSV fixtures.
+- `data/processed/`: cleaned CSV outputs with the same records.
+- `data/resumes/` and `data/job_descriptions/`: representative raw TXT samples.
+- `sample_data/sample_resumes/` and `sample_data/sample_job_descriptions/`: small teaching samples.
+- `src/`: extraction, cleaning, processing, dataset preparation, and TF-IDF demonstration modules.
+- `notebooks/`: regex preparation, NLP preparation, TF-IDF similarity, and dataset exploration.
+- `docs/` and `reports/`: project documentation and Month-1 report content.
 
 ## Run
-From the repository root:
-
 ```powershell
 pip install -r requirements.txt
 python -c "from src.dataset_preparation import prepare; prepare('data/sample_data/resumes.csv','data/sample_data/job_descriptions.csv','data/processed')"
 python -m src.similarity_demo
 ```
+Run notebooks from the repository root, in numbered order. All paths are relative. Similarity is an educational baseline, not a hiring decision or validated metric.
 
-Notebook paths are relative to the repository root. Similarity is an educational TF-IDF demonstration, not a hiring recommendation or validated performance measure.
+## Data safety
+`config/company_facts.json` is intentionally empty because no company facts were supplied. Do not add claims without an authorized source. Synthetic labels are not identities or protected attributes.
