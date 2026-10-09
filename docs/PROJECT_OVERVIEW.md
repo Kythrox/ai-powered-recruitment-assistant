@@ -1,2 +1,3 @@
 # Project overview
-This Month-1 baseline keeps generation, normalization, retrieval, and evaluation modular. Synthetic overlap labels are for pipeline testing only and must not be interpreted as hiring metrics.
+
+Month 1 establishes deterministic text extraction, regex cleaning, tabular dataset preparation, and a TF-IDF similarity demonstration. Every artifact is synthetic and reproducible from the checked-in CSV fixtures.
