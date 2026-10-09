@@ -9,7 +9,8 @@ def rank(resumes: pd.DataFrame, job_description: str, top_k: int = 5) -> pd.Data
     texts = [job_description] + resumes["cleaned_text"].fillna("").tolist()
     matrix = TfidfVectorizer().fit_transform(texts)
     scores = cosine_similarity(matrix[0:1], matrix[1:]).ravel()
-    result = resumes[["candidate_id"]].copy()
+    label_column = "candidate_label" if "candidate_label" in resumes.columns else "candidate_id"
+    result = resumes[[label_column]].copy()
     result["similarity"] = scores
     return result.sort_values("similarity", ascending=False).head(top_k).reset_index(drop=True)
 
